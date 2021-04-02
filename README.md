@@ -265,3 +265,4 @@ dat_graph %>%
 
 
 
+* .md file doesn't seem to reflect the `them()` function (I don't know why), and I stored the output figure in the fig folder.

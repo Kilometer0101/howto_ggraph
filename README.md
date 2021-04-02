@@ -16,7 +16,7 @@ library(tidygraph)
 library(ggraph)
 ```
 
-# Sample example
+# Sample data
 
 * Prepare a tibble with columns named `from` and `to`. 
 

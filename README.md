@@ -255,7 +255,10 @@ dat_graph %>%
   ) +
   geom_node_label(aes(label = name)) +
   facet_wrap( ~ tag) +
-  scale_edge_color_manual(values = c("Black", "red"))
+  scale_edge_color_manual(values = c("Black", "red"))+
+  theme(panel.background = element_rect(fill = "white"),
+        strip.background = element_rect(fill = "white"),
+        strip.text = element_text(size = 15))
 ```
 
 ![](README_files/figure-html/unnamed-chunk-17-1.png)<!-- -->

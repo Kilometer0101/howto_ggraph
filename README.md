@@ -134,8 +134,8 @@ tibble(A = sample(1:5, N, replace = T),
 
 ```r
 dat_graph %>% 
-  ggraph(layout = "stress")+
-  geom_edge_link()+
+  ggraph(layout = "stress") +
+  geom_edge_link() +
   geom_node_point()
 ```
 
@@ -148,11 +148,11 @@ dat_graph %>%
 
 ```r
 dat_graph %>% 
-  ggraph(layout = "stress")+
+  ggraph(layout = "stress") +
   geom_edge_link(color = "Red", 
                  linetype = "dotted", 
                  alpha = 0.5, 
-                 width = 1.5)+
+                 width = 1.5) +
   geom_node_point(color = "Blue",
                   size = 5,
                   shape = 17)
@@ -167,8 +167,8 @@ dat_graph %>%
 
 ```r
 dat_graph %>% 
-  ggraph(layout = "stress")+
-  geom_edge_fan()+
+  ggraph(layout = "stress") +
+  geom_edge_fan() +
   geom_node_label(aes(label = name))
 ```
 
@@ -253,8 +253,8 @@ dat_graph %>%
     start_cap = circle(5, "mm"),
     end_cap = circle(5, "mm")
   ) +
-  geom_node_label(aes(label = name))+
-  facet_wrap(~tag)+
+  geom_node_label(aes(label = name)) +
+  facet_wrap( ~ tag) +
   scale_edge_color_manual(values = c("Black", "red"))
 ```
 

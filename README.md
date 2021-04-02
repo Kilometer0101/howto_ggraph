@@ -264,5 +264,3 @@ dat_graph %>%
 ![](README_files/figure-html/unnamed-chunk-17-1.png)<!-- -->
 
 
-
-* .md file doesn't seem to reflect the `them()` function (I don't know why), and I stored the output figure in the fig folder.

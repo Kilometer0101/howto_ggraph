@@ -180,6 +180,7 @@ dat_graph %>%
 
 * The mapping specified by `aes()` function in the `geom_node_label()` function refers to *Node Data*. Therefore, the label argument should be `name`, where the name of the node is stored.
 
+# Demonstration
 
 
 ```r
@@ -210,3 +211,52 @@ dat <-
 ## 10     1     2 A         5
 ## # … with 24 more rows
 ```
+
+
+```r
+dat_graph <-
+  dat %>% 
+  as_tbl_graph(direction = T)
+```
+
+
+```
+## # A tbl_graph: 5 nodes and 34 edges
+## #
+## # A directed multigraph with 1 component
+## #
+## # Node Data: 5 x 1 (active)
+##   name 
+##   <chr>
+## 1 2    
+## 2 5    
+## 3 1    
+## 4 3    
+## 5 4    
+## #
+## # Edge Data: 34 x 4
+##    from    to tag       n
+##   <int> <int> <chr> <int>
+## 1     1     5 A         4
+## 2     1     4 A         3
+## 3     1     1 A         3
+## # … with 31 more rows
+```
+
+
+```r
+dat_graph %>% 
+  ggraph(layout = "stress") + 
+  geom_edge_link(
+    aes(color = tag, alpha = n, width = n),
+    arrow = arrow(type = "closed"), 
+    start_cap = circle(5, "mm"),
+    end_cap = circle(5, "mm")
+  ) +
+  geom_node_label(aes(label = name))+
+  facet_wrap(~tag)+
+  scale_edge_color_manual(values = c("Black", "red"))
+```
+
+![](README_files/figure-html/unnamed-chunk-17-1.png)<!-- -->
+
